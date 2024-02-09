@@ -20,7 +20,7 @@ const questions = [
   {
     question: 'What is 12 / 4?',
     options: ['2', '3', '4', '5'],
-    correctAnswerIndex: 2,
+    correctAnswerIndex: 1,
   },
   {
     question: 'What is the capital of France?',

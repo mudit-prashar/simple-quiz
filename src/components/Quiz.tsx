@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Button } from "@/components/ui/button"
-
+import EndScreen from './EndScreen'
 type Question = {
   question: string;
   options: string[];
@@ -49,29 +49,29 @@ const Quiz: React.FC<Props> = ({ questions }) => {
           <h2 className="text-lg font-bold mb-4">{questions[currentQuestion].question}</h2>
           <div>
             {questions[currentQuestion].options.map((option, index) => (
-              <button
+              <Button
                 key={index}
                 onClick={() => handleAnswerOptionClick(index)}
                 disabled={selectedOption !== null}
-                className="bg-blue-500 text-white px-4 py-2 rounded-lg mr-2 mb-2 hover:bg-blue-600"
+                className="text-white px-4 py-2 rounded-lg mr-2 mb-2 hover:bg-blue-600"
               >
                 {option}
-              </button>
+              </Button>
             ))}
           </div>
           {selectedOption !== null && (
-            <button onClick={handleNextQuestion} className="bg-green-500 text-white px-4 py-2 rounded-lg mt-4 hover:bg-green-600">
+            <Button onClick={handleNextQuestion} className="text-white px-4 py-2 rounded-lg mt-4 hover:bg-green-600">
               Next
-            </button>
+            </Button>
           )}
         </div>
       ) : (
         <div>
           <h2 className="text-5xl mb-4">Result</h2>
-          <p className="mb-4 text-3xl">{`You scored ${score} out of ${questions.length}`}</p>
-          <button onClick={restartQuiz} className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
+          <EndScreen score={score} totalQuestions={questions.length} />
+          <Button onClick={restartQuiz} className="text-white px-4 py-2 rounded-lg hover:bg-blue-600">
             Restart Quiz
-          </button>
+          </Button>
         </div>
       )}
     </div>
