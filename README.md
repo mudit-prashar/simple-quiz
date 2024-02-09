@@ -1,4 +1,4 @@
-[Vercel Deployment Link](https://simple-quiz-dr58r6zxv-mudit-s-projects.vercel.app/)
+[Vercel Deployment Link](https://simple-quiz-bnwoz3fxx-mudit-s-projects.vercel.app/)
 
 ## Getting Started
 
