@@ -1,3 +1,5 @@
+[Vercel Deployment Link](https://simple-quiz-dr58r6zxv-mudit-s-projects.vercel.app/)
+
 ## Getting Started
 
 Create a .env.local file in the project root with a `OPENAI_API_KEY` variable, example:
