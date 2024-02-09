@@ -14,10 +14,10 @@ const EndScreen: React.FC<EndScreenProps> = ({ score, totalQuestions }) => {
     const generateMessage = async () => {
       try {
         const response = await axios.post(
-          'https://api.openai.com/v1/completions',
+          'https://api.openai.com/v1/chat/completions',
           {
-            model: 'gpt-3.5-turbo-instruct', // Use your desired GPT model here
-            prompt: `The user scored ${score} out of ${totalQuestions} in the quiz.`,
+            model: 'gpt-3.5-turbo', // Use your desired GPT model here
+            messages: [{"role": "assistant", "content": `The user scored ${score} out of ${totalQuestions} in the quiz.`},],
           },
           {
             headers: {
@@ -29,7 +29,7 @@ const EndScreen: React.FC<EndScreenProps> = ({ score, totalQuestions }) => {
         console.log('Response:', response.data); // Log the entire response object
 
         if (response.data.choices && response.data.choices.length > 0) {
-          setMessage(response.data.choices[0].text.trim());
+          setMessage(response.data.choices[0].message.content.trim());
         } else {
           setMessage('No message available');
         }
