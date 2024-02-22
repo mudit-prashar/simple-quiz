@@ -1,4 +1,4 @@
-[Deployment Link](https://www.mudit-prashar.com/)
+[Deployment Link](https://www.mudit-prashar.com/) - OPENAI auto generated message won't work since the key is removed
 
 ## Getting Started
 
